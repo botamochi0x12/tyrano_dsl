@@ -1,5 +1,3 @@
-require 'logger'
-
 require_relative 'export_dsl'
 require_relative '../file_actions/file_copy'
 require_relative '../file_actions/create_file'
@@ -13,7 +11,7 @@ class TyranoDsl::ExportDsl::Context
   attr_reader :file_actions
 
   def initialize(world)
-    @logger = Logger.new(STDOUT)
+    @logger = TyranoDsl::Logger.new
     @world = world
     @file_actions = []
     @current_scene_content = nil

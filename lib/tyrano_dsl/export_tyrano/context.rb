@@ -1,4 +1,3 @@
-require 'logger'
 require 'set'
 
 require_relative 'writers/scene'
@@ -27,7 +26,7 @@ class TyranoDsl::ExportTyrano::Context
 
   # @param [TyranoDsl::Elements::World] world
   def initialize(world)
-    @logger = Logger.new(STDOUT)
+    @logger = TyranoDsl::Logger.new
     @world = world
 
     @file_actions = []

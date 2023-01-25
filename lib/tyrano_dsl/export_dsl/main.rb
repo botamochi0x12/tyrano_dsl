@@ -4,7 +4,7 @@ require_relative 'context'
 class TyranoDsl::ExportDsl::Main
 
   def initialize
-    @logger = Logger.new(STDOUT)
+    @logger = TyranoDsl::Logger.new
     @words = {}
     TyranoDsl::Vocabulary.get_words_class('export_dsl/words') do |word, word_class|
       @words[word] = word_class.new

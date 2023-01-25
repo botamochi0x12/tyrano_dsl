@@ -1,5 +1,3 @@
-require 'logger'
-
 require_relative '../tyrano_dsl'
 require_relative '../vocabulary'
 require_relative 'writers/background'
@@ -13,7 +11,7 @@ require_relative 'context'
 class TyranoDsl::ExportTyrano::Main
 
   def initialize
-    @logger = Logger.new(STDOUT)
+    @logger = TyranoDsl::Logger.new
     @words = {}
     TyranoDsl::Vocabulary.get_words_class('export_tyrano/words') do |word, word_class|
       @words[word] = word_class.new

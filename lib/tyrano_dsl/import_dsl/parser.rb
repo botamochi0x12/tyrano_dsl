@@ -1,5 +1,3 @@
-require 'logger'
-
 require_relative '../parsed_word'
 require_relative '../tyrano_exception'
 require_relative '../vocabulary'
@@ -46,7 +44,7 @@ class TyranoDsl::ImportDsl::Parser
   # @param [String] initial_file_path
   def initialize(context, initial_file_path)
     @context = context
-    @logger = Logger.new(STDOUT)
+    @logger = TyranoDsl::Logger.new
     @included_files_hierarchy = [initial_file_path]
   end
 
