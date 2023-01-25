@@ -22,7 +22,7 @@ class TyranoDsl::Intermediate::Main
   ]
 
   def initialize
-    @logger = Logger.new(STDOUT)
+    @logger = TyranoDsl::Logger.new
     @words = {}
     TyranoDsl::Vocabulary.get_words_class('intermediate/words') do |word, word_class|
       @words[word] = word_class.new

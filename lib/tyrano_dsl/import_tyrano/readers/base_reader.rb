@@ -1,5 +1,3 @@
-require 'logger'
-
 require_relative 'readers'
 
 class TyranoDsl::ImportTyrano::Readers::BaseReader
@@ -7,7 +5,7 @@ class TyranoDsl::ImportTyrano::Readers::BaseReader
   protected
 
   def logger
-    @logger ||= Logger.new(STDOUT)
+    @logger ||= TyranoDsl::Logger.new
   end
 
   def log

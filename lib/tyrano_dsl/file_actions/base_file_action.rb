@@ -1,4 +1,3 @@
-require 'logger'
 require_relative 'files_actions'
 
 class TyranoDsl::FileActions::BaseFileAction
@@ -21,7 +20,7 @@ class TyranoDsl::FileActions::BaseFileAction
   end
 
   def logger
-    @logger ||= Logger.new(STDOUT)
+    @logger ||= TyranoDsl::Logger.new
   end
 
   def log

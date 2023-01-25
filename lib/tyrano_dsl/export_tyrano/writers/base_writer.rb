@@ -10,7 +10,7 @@ class TyranoDsl::ExportTyrano::Writers::BaseWriter
   end
 
   def logger
-    @logger ||= Logger.new(STDOUT)
+    @logger ||= TyranoDsl::Logger.new
   end
 
   def log

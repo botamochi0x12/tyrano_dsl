@@ -1,6 +1,7 @@
 require_relative 'tyrano_exception'
 require_relative 'tyrano_dsl'
 require_relative 'intermediate/main'
+require_relative 'logger'
 
 # The entry point
 class TyranoDsl::Main
